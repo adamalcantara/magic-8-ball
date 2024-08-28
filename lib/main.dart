@@ -41,14 +41,20 @@ class _BallState extends State<Ball> {
 
   int ballNumber = 1;
 
+  void ballUpdate() {
+    setState(() {
+      print('I got clicked');
+      ballNumber = Random().nextInt(5) + 1;
+      print(ballNumber);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
         child: TextButton(
           onPressed: () {
-            print('I got clicked');
-            ballNumber = Random().nextInt(5);
-            print(ballNumber);
+            ballUpdate();
         },
           child: Image.asset('images/ball$ballNumber.png'),
         )
