@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   return runApp(
     MaterialApp(
-      home: BallPage(
-
-      ),
+      home: BallPage(),
     ),
   );
 }
@@ -26,7 +24,23 @@ class BallPage extends StatelessWidget {
             ),
           ),
         ),
+        body: Ball(),
       ),
+    );
+  }
+}
+
+class Ball extends StatefulWidget {
+
+  @override
+  State<Ball> createState() => _BallState();
+}
+
+class _BallState extends State<Ball> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Image.asset('images/ball1.png'),
     );
   }
 }
